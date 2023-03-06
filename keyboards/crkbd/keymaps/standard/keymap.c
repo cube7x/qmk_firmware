@@ -28,8 +28,6 @@ void keyboard_pre_init_user(void) {
   writePinHigh(24);
 }
 
-// test
-
 enum combos {
   desktop_left,
   desktop_right,
