@@ -43,10 +43,10 @@ enum combos {
 
 const uint16_t PROGMEM arlsft[] = {KC_A, KC_R, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM stlsft[] = {KC_S, KC_T, KC_LSFT, COMBO_END};
-const uint16_t PROGMEM rsdel[] = {KC_R, KC_S, KC_DEL, COMBO_END};
+const uint16_t PROGMEM rsdel[] = {KC_R, KC_S, LT(1,KC_DEL), COMBO_END};
 const uint16_t PROGMEM rslsft[] = {KC_R, KC_S, KC_LSFT, COMBO_END};
-const uint16_t PROGMEM ardel[] = {KC_A, KC_R, KC_DEL, COMBO_END};
-const uint16_t PROGMEM stdel[] = {KC_S, KC_T, KC_DEL, COMBO_END};
+const uint16_t PROGMEM ardel[] = {KC_A, KC_R, LT(1,KC_DEL), COMBO_END};
+const uint16_t PROGMEM stdel[] = {KC_S, KC_T, LT(1,KC_DEL), COMBO_END};
 const uint16_t PROGMEM tablsft[] = {KC_TAB, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM pg[] = {KC_P, KC_G, COMBO_END};
 const uint16_t PROGMEM df[] = {KC_D, KC_F, COMBO_END};
@@ -66,14 +66,12 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 const key_override_t delete_key_override_CTRL = ko_make_basic(MOD_MASK_CTRL, KC_BSPC, KC_DEL);
-const key_override_t space_key_override = ko_make_basic(MOD_MASK_SHIFT, LT(1,KC_SPC), KC_BSPC);
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
 const key_override_t ss_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_AT);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &delete_key_override_CTRL,
-    &space_key_override,
     &exlm_key_override,
     &ss_key_override,
     NULL // Null terminate the array of overrides!
@@ -95,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      DE_MINS, LT(0,DE_PLUS),KC_7,  KC_8,    KC_9, DE_EURO,                       DE_LBRC, KC_HOME,   KC_UP,  KC_END, DE_BSLS, DE_RBRC,
+      DE_MINS, LT(0,DE_PLUS),KC_7,  KC_8,    KC_9, DE_EURO,                      DE_LBRC, KC_HOME,   KC_UP,  KC_END, DE_BSLS, DE_RBRC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
     LT(0,DE_LABK),LT(2,KC_0),KC_4,  KC_5,    KC_6,  DE_EQL,                      DE_SLSH, KC_LEFT, KC_DOWN,KC_RIGHT, DE_QUOT, DE_AMPR,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
