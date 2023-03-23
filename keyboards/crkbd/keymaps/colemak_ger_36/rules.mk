@@ -7,4 +7,4 @@ LTO_ENABLE      = yes
 WPM_ENABLE = yes
 COMBO_ENABLE = yes
 KEY_OVERRIDE_ENABLE = yes
-BOOTLOADER = promicro_rp2040
+CONVERT_TO=promicro_rp2040

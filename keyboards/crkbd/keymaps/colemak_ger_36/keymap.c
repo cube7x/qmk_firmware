@@ -1,17 +1,14 @@
 /*
 Copyright 2019 @foostan
 Copyright 2020 Drashna Jaelre <@drashna>
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 (at your option) any later version.
-
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -65,51 +62,65 @@ combo_t key_combos[COMBO_COUNT] = {
     [gaming4] = COMBO(er, LCTL(KC_4)),
 };
 
-const key_override_t delete_key_override_CTRL = ko_make_basic(MOD_MASK_CTRL, KC_BSPC, KC_DEL);
+const key_override_t backspace_key_override = ko_make_basic(MOD_MASK_CTRL, KC_BSPC, KC_DEL);
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
-const key_override_t ss_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_AT);
+const key_override_t ss_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_UDIA);
+const key_override_t odia_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_ADIA);
+const key_override_t slsh_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_ODIA, DE_BSLS);
+const key_override_t quot_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_QUOT, DE_DQUO);
+const key_override_t lprn_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LPRN, DE_RPRN);
+const key_override_t lbrc_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LBRC, DE_RBRC);
+const key_override_t lcbr_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LCBR, DE_RCBR);
+const key_override_t labk_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LABK, DE_RABK);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
-    &delete_key_override_CTRL,
+    &backspace_key_override,
     &exlm_key_override,
     &ss_key_override,
+    &odia_key_override,
+    &slsh_key_override,
+    &quot_key_override,
+    &lprn_key_override,
+    &lbrc_key_override,
+    &lcbr_key_override,
+    &labk_key_override,
     NULL // Null terminate the array of overrides!
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z, DE_ODIA, DE_UDIA,
+      XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z,   DE_SS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, DE_ADIA,
+      XXXXXXX,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
+      XXXXXXX,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                     KC_BSPC, KC_LSFT, LT(1,KC_DEL),   DE_EXLM, LT(1,KC_SPC), LALT_T(KC_ENT)
+                                     KC_LCTL, KC_LSFT, LT(1,KC_DEL),   DE_ODIA, LT(1,KC_SPC), LALT_T(KC_ENT)
                                       //`--------------------------'  `--------------------------'
 
   ),
 
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      DE_MINS, LT(0,DE_PLUS),KC_7,  KC_8,    KC_9, DE_EURO,                      DE_LBRC, KC_HOME,   KC_UP,  KC_END, DE_BSLS, DE_RBRC,
+      XXXXXXX,  KC_TAB,    KC_7,    KC_8,    KC_9, DE_MINS,                      DE_LBRC, KC_HOME,   KC_UP,  KC_END, DE_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    LT(0,DE_LABK),LT(2,KC_0),KC_4,  KC_5,    KC_6,  DE_EQL,                      DE_SLSH, KC_LEFT, KC_DOWN,KC_RIGHT, DE_QUOT, DE_AMPR,
+      XXXXXXX, LT(2,KC_0), KC_4,    KC_5,    KC_6,  DE_EQL,                      DE_LPRN, KC_LEFT, KC_DOWN,KC_RIGHT, DE_QUOT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_SPC,LT(0,KC_COMM),KC_1,   KC_2,    KC_3, DE_PERC,                      DE_LCBR, DE_LPRN, DE_DQUO, DE_RPRN, DE_RCBR, DE_PIPE,
+      XXXXXXX,  KC_SPC,    KC_1,    KC_2,    KC_3,LT(0,KC_COMM),                 DE_LCBR, DE_EXLM,   DE_AT, DE_UDIA, DE_ADIA, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BSPC, KC_LSFT, KC_LCTL,   KC_LCTL, LSFT_T(KC_SPC), MO(2)
+                                          KC_LCTL, KC_LSFT, KC_BSPC,   KC_LCTL, LSFT_T(KC_SPC), MO(2)
                                       //`--------------------------'  `--------------------------'
   ),
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9, LT(0,DE_CIRC),                XXXXXXX, XXXXXXX,   TO(3), XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                       DE_DLR, DE_EURO, DE_PERC, DE_TILD,   TO(3), XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F10,                      XXXXXXX, DE_HASH,  DE_DLR, DE_TILD, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                       KC_ESC, DE_PLUS, DE_ASTR, DE_HASH, DE_AMPR, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3, DE_ACUT,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      DE_CIRC, DE_LABK, DE_PIPE,  DE_DEG, DE_ACUT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_BSPC, KC_LSFT, KC_LCTL,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -133,13 +144,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* 32 * 32 logo */
 static void render_logo(void) {
     static const char PROGMEM hexagram_logo[] = {
-	0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xc0, 0x70, 0x18, 0x06, 
-    0x06, 0x18, 0x70, 0xc0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 
-    0x00, 0x00, 0x01, 0x07, 0x1f, 0x32, 0x66, 0xc4, 0x6c, 0x38, 0x1e, 0x37, 0x61, 0xc0, 0x80, 0x80, 
-    0x80, 0x80, 0xc0, 0x61, 0x37, 0x1e, 0x38, 0x6c, 0xc4, 0x66, 0x32, 0x1f, 0x07, 0x01, 0x00, 0x00, 
-    0x00, 0x00, 0x80, 0xe0, 0xf8, 0x4c, 0x66, 0x23, 0x36, 0x1c, 0x78, 0xec, 0x86, 0x03, 0x01, 0x01, 
-    0x01, 0x01, 0x03, 0x86, 0xec, 0x78, 0x1c, 0x36, 0x23, 0x66, 0x4c, 0xf8, 0xe0, 0x80, 0x00, 0x00, 
-    0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x03, 0x0e, 0x18, 0x60, 
+	0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xc0, 0x70, 0x18, 0x06,
+    0x06, 0x18, 0x70, 0xc0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00,
+    0x00, 0x00, 0x01, 0x07, 0x1f, 0x32, 0x66, 0xc4, 0x6c, 0x38, 0x1e, 0x37, 0x61, 0xc0, 0x80, 0x80,
+    0x80, 0x80, 0xc0, 0x61, 0x37, 0x1e, 0x38, 0x6c, 0xc4, 0x66, 0x32, 0x1f, 0x07, 0x01, 0x00, 0x00,
+    0x00, 0x00, 0x80, 0xe0, 0xf8, 0x4c, 0x66, 0x23, 0x36, 0x1c, 0x78, 0xec, 0x86, 0x03, 0x01, 0x01,
+    0x01, 0x01, 0x03, 0x86, 0xec, 0x78, 0x1c, 0x36, 0x23, 0x66, 0x4c, 0xf8, 0xe0, 0x80, 0x00, 0x00,
+    0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x03, 0x0e, 0x18, 0x60,
     0x60, 0x18, 0x0e, 0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00
 };
     oled_write_raw_P(hexagram_logo, sizeof(hexagram_logo));
@@ -299,14 +310,14 @@ if (current_wpm > 0) {
     oled_write(" wpm", false);
 
  /* this fixes the screen on and off bug */
-   
+
     } else if(timer_elapsed32(anim_sleep) > OLED_TIMEOUT) {
         /* clear */
         oled_set_cursor(0,0);
         oled_write("                                                                                                                        ", false);
         oled_off();
-       
-   
+
+
     }
 }
 
@@ -332,7 +343,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 static void print_status_narrow(void) {
-   
+
 
     /* Print current layer */
     oled_write("LAYER", false);
@@ -390,40 +401,13 @@ bool oled_task_user(void) {
                 return true; // Return true for normal processing of tap keycode
                 break;
             } else if (record->event.pressed) {
-                tap_code16(KC_DOT); // Intercept hold function to send SEMICOLON    
-                return false;
-            }
-            return true; // this allows for normal processing of key release!
-        case LT(0,DE_LABK): //sends colon on tap and semicolon on hold
-            if (record->tap.count && record->event.pressed) {
-                return true; // Return true for normal processing of tap keycode
-                break;
-            } else if (record->event.pressed) {
-                tap_code16(DE_RABK); // Intercept hold function to send SEMICOLON    
-                return false;
-            }
-            return true; // this allows for normal processing of key release!
-        case LT(0,DE_PLUS): //sends colon on tap and semicolon on hold
-            if (record->tap.count && record->event.pressed) {
-                return true; // Return true for normal processing of tap keycode
-                break;
-            } else if (record->event.pressed) {
-                tap_code16(DE_ASTR); // Intercept hold function to send SEMICOLON    
-                return false;
-            }
-            return true; // this allows for normal processing of key release!
-        case LT(0,DE_CIRC): //sends colon on tap and semicolon on hold
-            if (record->tap.count && record->event.pressed) {
-                return true; // Return true for normal processing of tap keycode
-                break;
-            } else if (record->event.pressed) {
-                tap_code16(DE_DEG); // Intercept hold function to send SEMICOLON    
+                tap_code16(KC_DOT); // Intercept hold function to send SEMICOLON
                 return false;
             }
             return true; // this allows for normal processing of key release!
 
         /* KEYBOARD PET STATUS START */
- 
+
         case KC_LCTL:
             isSneaking = record->event.pressed;
             break;
@@ -436,7 +420,7 @@ bool oled_task_user(void) {
         case KC_LSFT:
             isBarking = record->event.pressed;
             break;
- 
+
         /* KEYBOARD PET STATUS END */
 }
 
