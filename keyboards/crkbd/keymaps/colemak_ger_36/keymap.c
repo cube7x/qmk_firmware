@@ -64,9 +64,11 @@ combo_t key_combos[COMBO_COUNT] = {
 
 const key_override_t backspace_key_override = ko_make_basic(MOD_MASK_CTRL, KC_BSPC, KC_DEL);
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
-const key_override_t ss_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_UDIA);
-const key_override_t odia_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_ADIA);
-const key_override_t slsh_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_ODIA, DE_BSLS);
+const key_override_t a_key_override = ko_make_basic(MOD_MASK_ALT, KC_A, DE_ADIA);
+const key_override_t o_key_override = ko_make_basic(MOD_MASK_ALT, KC_O, DE_ODIA);
+const key_override_t u_key_override = ko_make_basic(MOD_MASK_ALT, KC_U, DE_UDIA);
+const key_override_t s_key_override = ko_make_basic(MOD_MASK_ALT, KC_S, DE_SS);
+const key_override_t slsh_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SLSH, DE_BSLS);
 const key_override_t quot_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_QUOT, DE_DQUO);
 const key_override_t lprn_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LPRN, DE_RPRN);
 const key_override_t lbrc_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LBRC, DE_RBRC);
@@ -77,8 +79,10 @@ const key_override_t labk_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LABK, 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &backspace_key_override,
     &exlm_key_override,
-    &ss_key_override,
-    &odia_key_override,
+    &a_key_override,
+    &o_key_override,
+    &u_key_override,
+    &s_key_override,
     &slsh_key_override,
     &quot_key_override,
     &lprn_key_override,
@@ -91,13 +95,13 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z,   DE_SS, XXXXXXX,
+      XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z,  KC_ESC, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                     KC_LCTL, KC_LSFT, LT(1,KC_DEL),   DE_ODIA, LT(1,KC_SPC), LALT_T(KC_ENT)
+                             LCTL_T(KC_BSPC), KC_LSFT, LT(1,KC_DEL),   DE_EXLM, LT(1,KC_SPC), RALT_T(KC_ENT)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -108,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, LT(2,KC_0), KC_4,    KC_5,    KC_6,  DE_EQL,                      DE_LPRN, KC_LEFT, KC_DOWN,KC_RIGHT, DE_QUOT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  KC_SPC,    KC_1,    KC_2,    KC_3,LT(0,KC_COMM),                 DE_LCBR, DE_EXLM,   DE_AT, DE_UDIA, DE_ADIA, XXXXXXX,
+      XXXXXXX,  KC_SPC,    KC_1,    KC_2,    KC_3,LT(0,KC_COMM),                 DE_LCBR,   DE_AT, DE_LABK, DE_PLUS, DE_AMPR, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LCTL, KC_LSFT, KC_BSPC,   KC_LCTL, LSFT_T(KC_SPC), MO(2)
                                       //`--------------------------'  `--------------------------'
@@ -116,13 +120,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                       DE_DLR, DE_EURO, DE_PERC, DE_TILD,   TO(3), XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX, DE_PIPE, DE_TILD,  DE_DLR,   TO(3), XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                       KC_ESC, DE_PLUS, DE_ASTR, DE_HASH, DE_AMPR, XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      XXXXXXX, DE_ASTR, DE_EURO, DE_HASH, DE_PERC, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      DE_CIRC, DE_LABK, DE_PIPE,  DE_DEG, DE_ACUT, XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      XXXXXXX, DE_CIRC,  DE_DEG, DE_ACUT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BSPC, KC_LSFT, KC_LCTL,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          KC_LCTL, KC_LSFT, KC_BSPC,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
