@@ -63,6 +63,9 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 const key_override_t backspace_key_override = ko_make_basic(MOD_MASK_CTRL, KC_BSPC, KC_DEL);
+const key_override_t comm_key_override = ko_make_basic(MOD_MASK_ALT, KC_COMM, DE_EXLM);
+const key_override_t dot_key_override = ko_make_basic(MOD_MASK_ALT, KC_DOT, DE_QUES);
+const key_override_t mins_key_override = ko_make_basic(MOD_MASK_ALT, KC_SLSH, DE_AT);
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
 const key_override_t a_key_override = ko_make_basic(MOD_MASK_ALT, KC_A, DE_ADIA);
 const key_override_t o_key_override = ko_make_basic(MOD_MASK_ALT, KC_O, DE_ODIA);
@@ -78,6 +81,9 @@ const key_override_t labk_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LABK, 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &backspace_key_override,
+    &comm_key_override,
+    &dot_key_override,
+    &mins_key_override,
     &exlm_key_override,
     &a_key_override,
     &o_key_override,
@@ -97,11 +103,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z,  KC_ESC, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, XXXXXXX,
+      XXXXXXX,    KC_A,    KC_R,    KC_S, RALT_T(KC_T), KC_G,                       KC_M,    KC_N,    KC_E,    KC_I,    KC_O, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                             LCTL_T(KC_BSPC), KC_LSFT, LT(1,KC_DEL),   DE_EXLM, LT(1,KC_SPC), RALT_T(KC_ENT)
+                             LCTL_T(KC_BSPC), KC_LSFT, LT(1,KC_DEL),   DE_EXLM, LT(1,KC_SPC), LALT_T(KC_ENT)
                                       //`--------------------------'  `--------------------------'
 
   ),
