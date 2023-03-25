@@ -17,16 +17,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdio.h>
 #include <keymap_german.h>
 
-#define RALT_TT RALT_T(KC_T)
 #define LT_Y LT(4,KC_Y)
 #define LT_DEL LT(3,KC_DEL)
 #define LT_SPC LT(1,KC_SPC)
-#define LALT_ENT LALT_T(KC_ENT)
+#define RA_ENT RALT_T(KC_ENT)
 #define LT_0 LT(2,KC_0)
 #define LALT_ESC LALT(KC_ESC)
 #define LCTL_X LCTL(KC_X)
 #define LCTL_C LCTL(KC_C)
 #define LCTL_V LCTL(KC_V)
+#define LCTL_Z LCTL(KC_Z)
 #define LCTL_A LCTL(KC_A)
 #define LCTL_S LCTL(KC_S)
 #define LCTL_P LCTL(KC_P)
@@ -116,11 +116,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z,  KC_ESC, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_A,    KC_R,    KC_S, RALT_TT,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, XXXXXXX,
+      XXXXXXX,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    LT_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BSPC, KC_LSFT,  LT_DEL,    DE_EXLM,  LT_SPC, LALT_ENT
+                                          KC_BSPC, KC_LSFT,  LT_DEL,     RA_ENT,  LT_SPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -165,9 +165,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX,  LCTL_F, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX,  LCTL_F,  LCTL_P, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,  LCTL_A,  LCTL_S,  LCTL_P, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,  LCTL_Z,  LCTL_S,  LCTL_A, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                            LCTL_X,  LCTL_C,  LCTL_V,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -443,16 +443,6 @@ bool oled_task_user(void) {
 #endif
  bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT(0,KC_COMM): //sends colon on tap and semicolon on hold
-            if (record->tap.count && record->event.pressed) {
-                return true; // Return true for normal processing of tap keycode
-                break;
-            } else if (record->event.pressed) {
-                tap_code16(KC_DOT); // Intercept hold function to send SEMICOLON
-                return false;
-            }
-            return true; // this allows for normal processing of key release!
-
         /* KEYBOARD PET STATUS START */
 
         case KC_LCTL:
