@@ -26,11 +26,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LCTL_X LCTL(KC_X)
 #define LCTL_C LCTL(KC_C)
 #define LCTL_V LCTL(KC_V)
-#define LCTL_Z LCTL(KC_Z)
+#define LCTL_Z LCTL(DE_Z)
 #define LCTL_A LCTL(KC_A)
 #define LCTL_S LCTL(KC_S)
 #define LCTL_P LCTL(KC_P)
 #define LCTL_F LCTL(KC_F)
+#define LC_SPC LCTL(KC_SPC)
 
 void keyboard_pre_init_user(void) {
   // Set our LED pin as output
@@ -129,11 +130,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX,  KC_TAB,    KC_7,    KC_8,    KC_9, DE_EURO,                      DE_LBRC, KC_HOME,   KC_UP,  KC_END, DE_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    LT_0,    KC_4,    KC_5,    KC_6,  DE_EQL,                      DE_LPRN, KC_LEFT, KC_DOWN,KC_RIGHT, DE_QUOT, XXXXXXX,
+      XXXXXXX,    LT_0,    KC_4,    KC_5,    KC_6,  DE_EQL,                      DE_LABK, KC_LEFT, KC_DOWN,KC_RIGHT, DE_QUOT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, DE_ASTR,    KC_1,    KC_2,    KC_3, DE_PLUS,                      DE_LCBR, DE_LABK, DE_HASH, DE_PERC, DE_AMPR, XXXXXXX,
+      XXXXXXX, DE_ASTR,    KC_1,    KC_2,    KC_3, DE_PLUS,                      DE_LCBR, DE_LPRN, DE_HASH, DE_PERC, DE_AMPR, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, KC_LSFT, KC_BSPC,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          KC_LCTL, KC_LSFT, KC_LALT,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -165,9 +166,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX,  LCTL_F,  LCTL_P, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,  LCTL_A,  LCTL_F,  LCTL_P, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,  LCTL_Z,  LCTL_S,  LCTL_A, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,  LCTL_Z,  LCTL_S,  LC_SPC, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                            LCTL_X,  LCTL_C,  LCTL_V,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
