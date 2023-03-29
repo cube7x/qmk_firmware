@@ -56,10 +56,10 @@ enum combos {
 
 const uint16_t PROGMEM arlsft[] = {KC_A, KC_R, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM stlsft[] = {KC_S, KC_T, KC_LSFT, COMBO_END};
-const uint16_t PROGMEM rsdel[] = {KC_R, KC_S, LT(1,KC_DEL), COMBO_END};
+const uint16_t PROGMEM rsdel[] = {KC_R, KC_S, LT_DEL, COMBO_END};
 const uint16_t PROGMEM rslsft[] = {KC_R, KC_S, KC_LSFT, COMBO_END};
-const uint16_t PROGMEM ardel[] = {KC_A, KC_R, LT(1,KC_DEL), COMBO_END};
-const uint16_t PROGMEM stdel[] = {KC_S, KC_T, LT(1,KC_DEL), COMBO_END};
+const uint16_t PROGMEM ardel[] = {KC_A, KC_R, LT_DEL, COMBO_END};
+const uint16_t PROGMEM stdel[] = {KC_S, KC_T, LT_DEL, COMBO_END};
 const uint16_t PROGMEM tablsft[] = {KC_TAB, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM pg[] = {KC_P, KC_G, COMBO_END};
 const uint16_t PROGMEM df[] = {KC_D, KC_F, COMBO_END};
