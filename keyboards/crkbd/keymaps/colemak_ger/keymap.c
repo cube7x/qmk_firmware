@@ -376,15 +376,21 @@ static void print_status_narrow(void) {
 
     switch (get_highest_layer(layer_state)) {
         case 0:
-            oled_write("Base ", false);
+            oled_write("Base", false);
             break;
         case 1:
-            oled_write("Lower ", false);
+            oled_write("R Num", false);
             break;
         case 2:
-            oled_write("Raise", false);
+            oled_write("Func", false);
             break;
         case 3:
+            oled_write("L Num", false);
+            break;
+        case 4:
+            oled_write("CTRL", false);
+            break;
+        case 5:
             oled_write("Game", false);
             break;
         default:
