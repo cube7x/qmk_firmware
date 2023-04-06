@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       DE_LABK,    LT_0,    KC_4,    KC_5,    KC_6,  DE_EQL,                      DE_SLSH, KC_LEFT, KC_DOWN,KC_RIGHT, DE_QUOT, DE_AMPR,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      DE_RABK, DE_PERC,    KC_1,    KC_2,    KC_3, DE_PLUS,                      DE_LCBR, DE_LPRN, DE_DQUO, DE_RPRN, DE_RCBR, DE_PIPE,
+      DE_RABK, DE_PERC,    KC_1,    KC_2,    KC_3, DE_PLUS,                      DE_LCBR, DE_LPRN, DE_DQUO, DE_RPRN, DE_RCBR,  DE_DLR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LCTL, KC_LSFT, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -118,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX,   TO(5), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      XXXXXXX, DE_TILD,  DE_DLR, DE_CIRC, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      XXXXXXX, DE_TILD, DE_PIPE, DE_CIRC, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      XXXXXXX,  DE_DEG, DE_ACUT, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
