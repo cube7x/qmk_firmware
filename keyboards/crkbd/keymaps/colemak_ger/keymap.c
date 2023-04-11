@@ -60,10 +60,8 @@ const uint16_t PROGMEM rsdel[] = {KC_R, KC_S, LT_DEL, COMBO_END};
 const uint16_t PROGMEM rslsft[] = {KC_R, KC_S, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM ardel[] = {KC_A, KC_R, LT_DEL, COMBO_END};
 const uint16_t PROGMEM stdel[] = {KC_S, KC_T, LT_DEL, COMBO_END};
-const uint16_t PROGMEM tablsft[] = {KC_TAB, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM pg[] = {KC_P, KC_G, COMBO_END};
 const uint16_t PROGMEM df[] = {KC_D, KC_F, COMBO_END};
-const uint16_t PROGMEM er[] = {KC_E, KC_R, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     [desktop_left] = COMBO(arlsft, LCTL(LGUI(KC_LEFT))),
@@ -72,10 +70,8 @@ combo_t key_combos[COMBO_COUNT] = {
     [alttab] = COMBO(rslsft, LALT(KC_TAB)),
     [fancyzones1] = COMBO(ardel, LCTL(KC_F23)),
     [fancyzones2] = COMBO(stdel, LCTL(KC_F24)),
-    [gaming1] = COMBO(tablsft, LCTL(KC_1)),
-    [gaming2] = COMBO(pg, LCTL(KC_2)),
-    [gaming3] = COMBO(df, LCTL(KC_3)),
-    [gaming4] = COMBO(er, LCTL(KC_4)),
+    [gaming1] = COMBO(pg, LCTL(KC_1)),
+    [gaming2] = COMBO(df, LCTL(KC_2)),
 };
 
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
