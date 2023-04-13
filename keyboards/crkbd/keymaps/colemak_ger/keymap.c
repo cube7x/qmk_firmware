@@ -46,14 +46,13 @@ void keyboard_pre_init_user(void) {
 enum combos {
   desktop_left,
   desktop_right,
-  desktop_show,
   alttab,
   fancyzones1,
   fancyzones2,
+  fancyzones3,
+  fancyzones4,
   gaming1,
   gaming2,
-  gaming3,
-  gaming4,
 };
 
 const uint16_t PROGMEM arlsft[] = {KC_A, KC_R, KC_LSFT, COMBO_END};
