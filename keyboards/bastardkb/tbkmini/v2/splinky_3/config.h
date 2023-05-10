@@ -24,7 +24,14 @@
     { GP27, GP28, GP21, GP6, GP7, GP8 }
 
 /* Handedness. */
-#define MASTER_RIGHT
+#define MASTER_LEFT
+// #define MASTER_RIGHT
+// #define EE_HANDS
+
+#define COMBO_COUNT 10
+
+//#define QUICK_TAP_TERM 0
+#define TAPPING_TERM 200
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
 // If so, uncomment the following code, and undefine MASTER_RIGHT above.
@@ -33,6 +40,8 @@
 
 /* RGB settings. */
 #define RGB_DI_PIN GP0
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
 /* Reset. */
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
