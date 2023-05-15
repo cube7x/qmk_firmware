@@ -35,7 +35,6 @@ void keyboard_pre_init_user(void) {
 }
 
 enum combos {
-  up_mouse_up,
   desktop_left,
   desktop_right,
   alttab,
@@ -47,7 +46,6 @@ enum combos {
   gaming2,
 };
 
-const uint16_t PROGMEM uplalt[] = {KC_UP, KC_LALT, COMBO_END};
 const uint16_t PROGMEM arlsft[] = {KC_A, KC_R, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM rslsft[] = {KC_R, KC_S, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM stlsft[] = {KC_S, KC_T, KC_LSFT, COMBO_END};
@@ -59,7 +57,6 @@ const uint16_t PROGMEM pg[] = {KC_P, KC_G, COMBO_END};
 const uint16_t PROGMEM df[] = {KC_D, KC_F, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-    [up_mouse_up] = COMBO(uplalt, KC_MS_UP),
     [desktop_left] = COMBO(arlsft, LCTL(LGUI(KC_LEFT))),
     [desktop_right] = COMBO(stlsft, LCTL(LGUI(KC_RIGHT))),
     [alttab] = COMBO(rslsft, LALT(KC_TAB)),
@@ -72,10 +69,12 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
+const key_override_t up_key_override = ko_make_basic(MOD_MASK_ALT, KC_UP, KC_MS_UP);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &exlm_key_override,
+    &up_key_override,
     NULL // Null terminate the array of overrides!
 };
 
