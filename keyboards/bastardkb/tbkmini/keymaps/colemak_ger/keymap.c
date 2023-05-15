@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <keymap_german.h>
 
 #define LC_BSPC LCTL_T(KC_BSPC)
-#define LC_AT LCTL_T(RALT(KC_Q))
+#define LC_AT LCTL_T(DE_AT)
 #define LA_DEL LALT_T(KC_DEL)
 #define LT_DEL LT(3,KC_DEL)
 #define LT_SPC LT(1,KC_SPC)
@@ -70,11 +70,25 @@ combo_t key_combos[COMBO_COUNT] = {
 
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
 const key_override_t up_key_override = ko_make_basic(MOD_MASK_ALT, KC_UP, KC_MS_UP);
+const key_override_t down_key_override = ko_make_basic(MOD_MASK_ALT, KC_DOWN, KC_MS_DOWN);
+const key_override_t left_key_override = ko_make_basic(MOD_MASK_ALT, KC_LEFT, KC_MS_LEFT);
+const key_override_t right_key_override = ko_make_basic(MOD_MASK_ALT, KC_RIGHT, KC_MS_RIGHT);
+const key_override_t home_key_override = ko_make_basic(MOD_MASK_ALT, KC_HOME, KC_MS_WH_UP);
+const key_override_t end_key_override = ko_make_basic(MOD_MASK_ALT, KC_END, KC_MS_WH_DOWN);
+const key_override_t mb1_key_override = ko_make_basic(MOD_MASK_ALT, KC_5, KC_MS_BTN1);
+const key_override_t mb2_key_override = ko_make_basic(MOD_MASK_ALT, KC_6, KC_MS_BTN2);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &exlm_key_override,
     &up_key_override,
+    &down_key_override,
+    &left_key_override,
+    &right_key_override,
+    &home_key_override,
+    &end_key_override,
+    &mb1_key_override,
+    &mb2_key_override,
     NULL // Null terminate the array of overrides!
 };
 
