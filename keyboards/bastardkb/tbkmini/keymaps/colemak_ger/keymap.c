@@ -35,6 +35,7 @@ void keyboard_pre_init_user(void) {
 }
 
 enum combos {
+  up_mouse_up,
   desktop_left,
   desktop_right,
   alttab,
@@ -46,6 +47,7 @@ enum combos {
   gaming2,
 };
 
+const uint16_t PROGMEM uplalt[] = {KC_UP, KC_LALT, COMBO_END};
 const uint16_t PROGMEM arlsft[] = {KC_A, KC_R, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM rslsft[] = {KC_R, KC_S, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM stlsft[] = {KC_S, KC_T, KC_LSFT, COMBO_END};
@@ -57,6 +59,7 @@ const uint16_t PROGMEM pg[] = {KC_P, KC_G, COMBO_END};
 const uint16_t PROGMEM df[] = {KC_D, KC_F, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
+    [up_mouse_up] = COMBO(uplalt, KC_MS_UP),
     [desktop_left] = COMBO(arlsft, LCTL(LGUI(KC_LEFT))),
     [desktop_right] = COMBO(stlsft, LCTL(LGUI(KC_RIGHT))),
     [alttab] = COMBO(rslsft, LALT(KC_TAB)),
