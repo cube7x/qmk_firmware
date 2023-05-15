@@ -80,7 +80,7 @@ const key_override_t slash_key_override = ko_make_basic(MOD_MASK_ALT, DE_SLSH, K
 const key_override_t quot_key_override = ko_make_basic(MOD_MASK_ALT, DE_QUOT, KC_MS_WH_RIGHT);
 const key_override_t mb1_key_override = ko_make_basic(MOD_MASK_ALT, KC_6, KC_MS_BTN1);
 const key_override_t mb2_key_override = ko_make_basic(MOD_MASK_ALT, KC_4, KC_MS_BTN2);
-const key_override_t mb3_key_override = ko_make_basic(MOD_MASK_ALT, KC_5, KC_MS_BTN2);
+const key_override_t mb3_key_override = ko_make_basic(MOD_MASK_ALT, KC_5, KC_MS_BTN3);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
