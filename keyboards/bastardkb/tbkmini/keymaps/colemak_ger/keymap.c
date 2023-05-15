@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <keymap_german.h>
 
 #define LC_BSPC LCTL_T(KC_BSPC)
+#define LC_AT LCTL_T(DE_AT)
 #define LA_DEL LALT_T(KC_DEL)
 #define LT_DEL LT(3,KC_DEL)
 #define LT_SPC LT(1,KC_SPC)
@@ -68,12 +69,10 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
-const key_override_t ss_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_AT);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &exlm_key_override,
-    &ss_key_override,
     NULL // Null terminate the array of overrides!
 };
 
@@ -84,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, DE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
+        LC_AT,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           LC_BSPC, KC_LSFT,  LT_DEL,     LA_ENT,  LT_SPC, DE_EXLM
                                       //`--------------------------'  `--------------------------'
