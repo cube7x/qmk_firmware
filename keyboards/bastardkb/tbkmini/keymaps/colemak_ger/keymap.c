@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <keymap_german.h>
 
 #define LC_BSPC LCTL_T(KC_BSPC)
-#define LC_AT LCTL_T(KC_AT)
+#define LC_AT LCTL_T(RALT(KC_2))
 #define LA_DEL LALT_T(KC_DEL)
 #define LT_DEL LT(3,KC_DEL)
 #define LT_SPC LT(1,KC_SPC)
