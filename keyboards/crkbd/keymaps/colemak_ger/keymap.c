@@ -17,23 +17,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdio.h>
 #include <keymap_german.h>
 
-#define LT_Y LT(4,KC_Y)
+#define LC_BSPC LCTL_T(KC_BSPC)
+#define LC_AT LCTL_T(DE_AT)
+#define LA_DEL LALT_T(KC_DEL)
 #define LT_DEL LT(3,KC_DEL)
 #define LT_SPC LT(1,KC_SPC)
 #define LA_ENT LALT_T(KC_ENT)
 #define LT_0 LT(2,KC_0)
 #define LA_ESC LALT(KC_ESC)
-#define LCTL_X LCTL(KC_X)
-#define LCTL_C LCTL(KC_C)
-#define LCTL_V LCTL(KC_V)
-#define LCTL_Z LCTL(DE_Z)
-#define LCTL_A LCTL(KC_A)
-#define LCTL_S LCTL(KC_S)
-#define LCTL_P LCTL(KC_P)
-#define LCTL_F LCTL(KC_F)
-#define LCTL_E LCTL(KC_E)
-#define LCTL_K LCTL(KC_K)
-#define LC_SPC LCTL(KC_SPC)
 
 void keyboard_pre_init_user(void) {
   // Set our LED pin as output
@@ -78,12 +69,34 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
-const key_override_t ss_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_AT);
+const key_override_t ssat_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_AT);
+const key_override_t up_key_override = ko_make_basic(MOD_MASK_ALT, KC_UP, KC_MS_UP);
+const key_override_t down_key_override = ko_make_basic(MOD_MASK_ALT, KC_DOWN, KC_MS_DOWN);
+const key_override_t left_key_override = ko_make_basic(MOD_MASK_ALT, KC_LEFT, KC_MS_LEFT);
+const key_override_t right_key_override = ko_make_basic(MOD_MASK_ALT, KC_RIGHT, KC_MS_RIGHT);
+const key_override_t home_key_override = ko_make_basic(MOD_MASK_ALT, KC_HOME, KC_MS_WH_UP);
+const key_override_t end_key_override = ko_make_basic(MOD_MASK_ALT, KC_END, KC_MS_WH_DOWN);
+const key_override_t slash_key_override = ko_make_basic(MOD_MASK_ALT, DE_SLSH, KC_MS_WH_LEFT);
+const key_override_t quot_key_override = ko_make_basic(MOD_MASK_ALT, DE_QUOT, KC_MS_WH_RIGHT);
+const key_override_t mb1_key_override = ko_make_basic(MOD_MASK_ALT, KC_6, KC_MS_BTN1);
+const key_override_t mb2_key_override = ko_make_basic(MOD_MASK_ALT, KC_4, KC_MS_BTN2);
+const key_override_t mb3_key_override = ko_make_basic(MOD_MASK_ALT, KC_5, KC_MS_BTN3);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &exlm_key_override,
-    &ss_key_override,
+    &ssat_key_override,
+    &up_key_override,
+    &down_key_override,
+    &left_key_override,
+    &right_key_override,
+    &home_key_override,
+    &end_key_override,
+    &slash_key_override,
+    &quot_key_override,
+    &mb1_key_override,
+    &mb2_key_override,
+    &mb3_key_override,
     NULL // Null terminate the array of overrides!
 };
 
@@ -94,9 +107,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, DE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    LT_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
+        LC_AT,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BSPC, KC_LSFT,  LT_DEL,     LA_ENT,  LT_SPC, DE_EXLM
+                                          LC_BSPC, KC_LSFT,  LT_DEL,     LA_ENT,  LT_SPC, DE_EXLM
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -109,13 +122,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       DE_RABK, DE_PERC,    KC_1,    KC_2,    KC_3, DE_PLUS,                      DE_LCBR, DE_LPRN, DE_DQUO, DE_RPRN, DE_RCBR,  DE_DLR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, KC_LSFT, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          LC_BSPC, KC_LSFT,  LA_DEL,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX,   TO(5), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX,   TO(4), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      XXXXXXX, DE_TILD, DE_PIPE, DE_CIRC, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -131,25 +144,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB,    LT_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       DE_EQL,  KC_SPC,    KC_1,    KC_2,    KC_3, KC_COMM,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       KC_ENT,  KC_SPC,    KC_1,    KC_2,    KC_3, KC_COMM,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
   [4] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,  LCTL_A,  LCTL_F,  LCTL_P,  LCTL_E,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,  LCTL_Z,  LCTL_S,  LC_SPC,  LCTL_K,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                           LCTL_X,  LCTL_C,  LCTL_V,    XXXXXXX, XXXXXXX, XXXXXXX
-                                      //`--------------------------'  `--------------------------'
-  ),
-
-  [5] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
          KC_P,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_R,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
