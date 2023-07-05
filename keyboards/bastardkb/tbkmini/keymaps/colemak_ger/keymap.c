@@ -38,10 +38,6 @@ enum combos {
   desktop_left,
   desktop_right,
   alttab,
-  fancyzones1,
-  fancyzones2,
-  fancyzones3,
-  fancyzones4,
   gaming1,
   gaming2,
 };
@@ -49,10 +45,6 @@ enum combos {
 const uint16_t PROGMEM arlsft[] = {KC_A, KC_R, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM rslsft[] = {KC_R, KC_S, KC_LSFT, COMBO_END};
 const uint16_t PROGMEM stlsft[] = {KC_S, KC_T, KC_LSFT, COMBO_END};
-const uint16_t PROGMEM ardel[] = {KC_A, KC_R, LT_DEL, COMBO_END};
-const uint16_t PROGMEM rsdel[] = {KC_R, KC_S, LT_DEL, COMBO_END};
-const uint16_t PROGMEM stdel[] = {KC_S, KC_T, LT_DEL, COMBO_END};
-const uint16_t PROGMEM atdel[] = {KC_A, KC_T, LT_DEL, COMBO_END};
 const uint16_t PROGMEM pg[] = {KC_P, KC_G, COMBO_END};
 const uint16_t PROGMEM df[] = {KC_D, KC_F, COMBO_END};
 
@@ -60,10 +52,6 @@ combo_t key_combos[COMBO_COUNT] = {
     [desktop_left] = COMBO(arlsft, LCTL(LGUI(KC_LEFT))),
     [desktop_right] = COMBO(stlsft, LCTL(LGUI(KC_RIGHT))),
     [alttab] = COMBO(rslsft, LALT(KC_TAB)),
-    [fancyzones1] = COMBO(ardel, LCTL(KC_F21)),
-    [fancyzones2] = COMBO(rsdel, LCTL(KC_F22)),
-    [fancyzones3] = COMBO(stdel, LCTL(KC_F23)),
-    [fancyzones4] = COMBO(atdel, LCTL(KC_F24)),
     [gaming1] = COMBO(pg, LCTL(KC_1)),
     [gaming2] = COMBO(df, LCTL(KC_2)),
 };
@@ -107,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, DE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        LC_AT,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
+      KC_LGUI,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           LC_BSPC, KC_LSFT,  LT_DEL,     LA_ENT,  LT_SPC, DE_EXLM
                                       //`--------------------------'  `--------------------------'
