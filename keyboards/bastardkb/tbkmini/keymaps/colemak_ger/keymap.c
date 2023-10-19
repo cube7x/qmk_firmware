@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LT_DEL4 LT(4,KC_DEL)
 #define LT_SPC LT(1,KC_SPC)
 #define LT_ENT LT(2,KC_ENT)
-#define LA_EXLM LALT_T(DE_EXLM)
+#define LA_EXLM LALT_T(LSFT(KC_1))
 #define LT_0 LT(2,KC_0)
 #define LA_ESC LALT(KC_ESC)
 
