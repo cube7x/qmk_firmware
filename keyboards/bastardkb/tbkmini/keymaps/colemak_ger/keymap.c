@@ -107,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_split_3x6_3( 
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,  KC_ALT,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX,  KC_HOME,  KC_UP,  KC_END, KC_PGUP,  TO(6),
+      XXXXXXX, KC_LALT,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX,  KC_HOME,  KC_UP,  KC_END, KC_PGUP,  TO(6),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB, KC_BSPC,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      DE_TILD, KC_LEFT, KC_DOWN,KC_RIGHT, KC_PGDN,  TO(5),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
