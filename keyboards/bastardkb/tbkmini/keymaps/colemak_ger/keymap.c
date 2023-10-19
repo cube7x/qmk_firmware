@@ -20,8 +20,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LC_BSPC LCTL_T(KC_BSPC)
 #define LA_DEL LALT_T(KC_DEL)
 #define LT_DEL LT(3,KC_DEL)
+#define LT_DEL4 LT(4,KC_DEL)
 #define LT_SPC LT(1,KC_SPC)
-#define LA_ENT LALT_T(KC_ENT)
+#define LT_ENT LT(2,KC_ENT)
+#define LA_EXLM LALT_T(DE_EXLM)
 #define LT_0 LT(2,KC_0)
 #define LA_ESC LALT(KC_ESC)
 
@@ -69,33 +71,11 @@ combo_t key_combos[COMBO_COUNT] = {
 
 const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
 const key_override_t ssat_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_AT);
-const key_override_t up_key_override = ko_make_basic(MOD_MASK_ALT, KC_UP, KC_MS_UP);
-const key_override_t down_key_override = ko_make_basic(MOD_MASK_ALT, KC_DOWN, KC_MS_DOWN);
-const key_override_t left_key_override = ko_make_basic(MOD_MASK_ALT, KC_LEFT, KC_MS_LEFT);
-const key_override_t right_key_override = ko_make_basic(MOD_MASK_ALT, KC_RIGHT, KC_MS_RIGHT);
-const key_override_t home_key_override = ko_make_basic(MOD_MASK_ALT, KC_HOME, KC_MS_WH_UP);
-const key_override_t end_key_override = ko_make_basic(MOD_MASK_ALT, KC_END, KC_MS_WH_DOWN);
-const key_override_t slash_key_override = ko_make_basic(MOD_MASK_ALT, DE_SLSH, KC_MS_WH_LEFT);
-const key_override_t quot_key_override = ko_make_basic(MOD_MASK_ALT, DE_QUOT, KC_MS_WH_RIGHT);
-const key_override_t mb1_key_override = ko_make_basic(MOD_MASK_ALT, KC_6, KC_MS_BTN1);
-const key_override_t mb2_key_override = ko_make_basic(MOD_MASK_ALT, KC_4, KC_MS_BTN2);
-const key_override_t mb3_key_override = ko_make_basic(MOD_MASK_ALT, KC_5, KC_MS_BTN3);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &exlm_key_override,
     &ssat_key_override,
-    &up_key_override,
-    &down_key_override,
-    &left_key_override,
-    &right_key_override,
-    &home_key_override,
-    &end_key_override,
-    &slash_key_override,
-    &quot_key_override,
-    &mb1_key_override,
-    &mb2_key_override,
-    &mb3_key_override,
     NULL // Null terminate the array of overrides!
 };
 
@@ -108,38 +88,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LC_BSPC, KC_LSFT,  LT_DEL,     LA_ENT,  LT_SPC, DE_EXLM
+                                          LC_BSPC, KC_LSFT,  LT_DEL,     LT_ENT,  LT_SPC, LA_EXLM
                                       //`--------------------------'  `--------------------------'
 
   ),
 
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      DE_HASH, DE_EURO,    KC_7,    KC_8,    KC_9, DE_ASTR,                      DE_LBRC, KC_HOME,   KC_UP,  KC_END, DE_BSLS, DE_RBRC,
+      KC_ASTR, DE_PLUS,    KC_7,    KC_8,    KC_9, DE_MINS,                      DE_LBRC, DE_LCBR,  DE_EQL, DE_RCBR, DE_BSLS, DE_RBRC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      DE_LABK,    LT_0,    KC_4,    KC_5,    KC_6,  DE_EQL,                      DE_SLSH, KC_LEFT, KC_DOWN,KC_RIGHT, DE_QUOT, DE_AMPR,
+       KC_TAB,    LT_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                      DE_SLSH, DE_LPRN, DE_DQUO, DE_RPRN, DE_QUOT, DE_AMPR,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      DE_RABK, DE_PERC,    KC_1,    KC_2,    KC_3, DE_PLUS,                      DE_LCBR, DE_LPRN, DE_DQUO, DE_RPRN, DE_RCBR,  DE_DLR,
+       KC_ENT,  KC_SPC,    KC_1,    KC_2,    KC_3, KC_COMM,                      DE_EURO, DE_LABK, DE_HASH, DE_RABK, DE_PERC,  DE_DLR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           LC_BSPC, KC_LSFT,  LA_DEL,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [2] = LAYOUT_split_3x6_3(
+  [2] = LAYOUT_split_3x6_3( 
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX,   TO(4),   TO(5), XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX,  KC_ALT,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX,  KC_HOME,  KC_UP,  KC_END, KC_PGUP,  TO(6),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      XXXXXXX, DE_TILD, DE_PIPE, DE_CIRC, XXXXXXX, XXXXXXX,
+       KC_TAB, KC_BSPC,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      DE_TILD, KC_LEFT, KC_DOWN,KC_RIGHT, KC_PGDN,  TO(5),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      XXXXXXX,  DE_DEG, DE_ACUT, XXXXXXX, XXXXXXX, XXXXXXX,
+       KC_ENT,  KC_SPC,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      XXXXXXX, DE_CIRC, DE_PIPE,  DE_DEG, DE_ACUT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, KC_LSFT, KC_BSPC,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          KC_LCTL, KC_LSFT, LT_DEL4,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_ESC, DE_PLUS,    KC_7,    KC_8,    KC_9, DE_MINS,                      XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,XXXXXXX, XXXXXXX,
+      KC_ASTR, DE_PLUS,    KC_7,    KC_8,    KC_9, DE_MINS,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB,    LT_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -151,6 +131,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [4] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_MS_WH_UP, KC_MS_UP, KC_MS_WH_DOWN, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, KC_MS_BTN3, KC_MS_BTN2, KC_MS_BTN1, XXXXXXX,             XXXXXXX, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                      //`--------------------------'  `--------------------------'
+  ),
+  [5] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
          KC_P,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_R,                      XXXXXXX, XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,                      XXXXXXX, XXXXXXX,    KC_0,    KC_4,    KC_5,    KC_6,
@@ -160,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                              KC_C,  KC_SPC, KC_LCTL,      TO(0), XXXXXXX,  LA_ESC
                                       //`--------------------------'  `--------------------------'
   ),
-  [5] = LAYOUT_split_3x6_3(
+  [6] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      XXXXXXX, XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
