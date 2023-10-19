@@ -68,12 +68,10 @@ combo_t key_combos[COMBO_COUNT] = {
     [gaming2] = COMBO(df, LCTL(KC_2)),
 };
 
-const key_override_t exlm_key_override = ko_make_basic(MOD_MASK_SHIFT, LA_EXLM, DE_QUES);
 const key_override_t ssat_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_AT);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
-    &exlm_key_override,
     &ssat_key_override,
     NULL // Null terminate the array of overrides!
 };
