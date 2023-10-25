@@ -38,9 +38,6 @@
 // #define SPLIT_HAND_PIN GP15
 // #define SPLIT_HAND_PIN_LOW_IS_LEFT  // High -> right, Low -> left.
 
-/* RGB settings. */
-#define RGB_DI_PIN GP0
-
 #define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
 /* Reset. */
