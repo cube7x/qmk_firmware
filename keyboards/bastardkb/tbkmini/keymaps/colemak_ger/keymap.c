@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <keymap_german.h>
 
 #define LC_BSPC LCTL_T(KC_BSPC)
+#define LT_SPC LT(1,KC_SPC)
 #define LT_DEL LT(1,KC_DEL)
 #define LT_0 LT(2,KC_0)
 #define LT_ENT LT(2,KC_ENT)
@@ -83,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LC_BSPC, KC_LSFT,  LT_DEL,     LT_ENT,  KC_SPC, KC_LALT
+                                          LC_BSPC, KC_LSFT,  LT_DEL,     LT_ENT,  LT_SPC, KC_LALT
                                       //`--------------------------'  `--------------------------'
 
   ),
