@@ -28,22 +28,22 @@ void keyboard_pre_init_user(void) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-         KC_P,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_R,                         KC_R,    KC_E,    KC_W,    KC_Q,    KC_G,    KC_P,
+         KC_P,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_R,                         KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_P,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,                         KC_F,    KC_D,    KC_S,    KC_A, KC_LSFT,  KC_TAB,
+       KC_TAB, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,                         KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_P,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-         KC_T,    KC_Z,    KC_Y,    KC_X,    KC_V,  KC_ESC,                       KC_ESC,    KC_V,    KC_X,    KC_Y,    KC_Z,    KC_T,
+         KC_T,    KC_Z,    KC_Y,    KC_X,    KC_V,  KC_ESC,                       KC_ESC,    KC_8,    KC_7,    KC_Y,    KC_Z,    KC_T,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                             KC_C,  KC_SPC, KC_LCTL,    KC_SPC,  KC_SPC,    TO(1)
+                                             KC_C,  KC_SPC, KC_LCTL,    KC_SPC,  KC_6,    TO(1)
                                       //`--------------------------'  `--------------------------'
   ),
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-         KC_P,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_R,                         RALT(KC_Q),    RALT(KC_7),    RALT(KC_8),    RALT(KC_9),    RALT(KC_7),    RALT(KC_V),
+         KC_P,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_R,                         RALT(KC_Q),    RALT(KC_1),    RALT(KC_2),    RALT(KC_3),    RALT(KC_7),    RALT(KC_V),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,                         RALT(KC_U),    RALT(KC_4),    RALT(KC_5),    RALT(KC_6), RALT(KC_0),  RALT(KC_A),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-         KC_T,    KC_Z,    KC_Y,    KC_X,    KC_V,  KC_ESC,                       RALT(KC_T),    RALT(KC_1),    RALT(KC_2),    RALT(KC_3),    RALT(KC_7),    RALT(KC_B),
+         KC_T,    KC_Z,    KC_Y,    KC_X,    KC_V,  KC_ESC,                       RALT(KC_T),    RALT(KC_7),    RALT(KC_8),    RALT(KC_9),    RALT(KC_7),    RALT(KC_B),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                              KC_C,  KC_SPC, KC_LCTL,    RALT(KC_O),  RALT(KC_I),    TO(0)
                                       //`--------------------------'  `--------------------------'
