@@ -31,10 +31,12 @@
 #define COMBO_COUNT 10
 
 // Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 250
+#define TAPPING_TERM 300
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
+
+#define IGNORE_MOD_TAP_INTERRUPT
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
 // If so, uncomment the following code, and undefine MASTER_RIGHT above.
