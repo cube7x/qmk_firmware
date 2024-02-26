@@ -31,7 +31,7 @@
 #define COMBO_COUNT 10
 
 // default but used in macros
-#define TAPPING_TERM 400
+#define TAPPING_TERM 200
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
