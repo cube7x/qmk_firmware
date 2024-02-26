@@ -17,6 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdio.h>
 #include <keymap_german.h>
 
+#define TAPPING_TERM 200
+
 #define LC_BSPC LCTL_T(KC_BSPC)
 #define LT_SPC LT(1,KC_SPC)
 #define LT_DEL LT(1,KC_DEL)
