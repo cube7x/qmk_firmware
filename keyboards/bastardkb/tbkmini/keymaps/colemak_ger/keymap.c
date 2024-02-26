@@ -17,7 +17,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdio.h>
 #include <keymap_german.h>
 
-#define TAPPING_TERM 300
+// Configure the global tapping term (default: 200ms)
+#define TAPPING_TERM 150
+
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define QUICK_TAP_TERM 0
+
+// Left-hand home row mods
+#define HOME_A LGUI_T(KC_A)
+#define HOME_R LALT_T(KC_R)
+#define HOME_S LSFT_T(KC_S)
+#define HOME_T LCTL_T(KC_T)
+
+// Right-hand home row mods
+#define HOME_N RCTL_T(KC_N)
+#define HOME_E RSFT_T(KC_E)
+#define HOME_I LALT_T(KC_I)
+#define HOME_O RGUI_T(KC_O)
+
 
 #define LC_BSPC LCTL_T(KC_BSPC)
 #define LT_SPC LT(1,KC_SPC)
@@ -82,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z, DE_ODIA, DE_UDIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,LSFT_T(KC_A),LGUI_T(KC_R),LALT_T(KC_S),LCTL_T(KC_T), KC_G,            KC_M,LCTL_T(KC_N),LALT_T(KC_E),LGUI_T(KC_I),LSFT_T(KC_O), DE_ADIA,
+       KC_TAB,  HOME_A,  HOME_R,  HOME_S,  HOME_T,    KC_G,                         KC_M,  HOME_N,  HOME_E,  HOME_I,  HOME_O, DE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
