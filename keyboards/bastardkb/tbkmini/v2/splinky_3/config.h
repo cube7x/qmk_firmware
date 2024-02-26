@@ -36,7 +36,7 @@
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 
-#define BILATERAL_COMBINATIONS
+#define PERMISSIVE_HOLD
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
 // If so, uncomment the following code, and undefine MASTER_RIGHT above.
