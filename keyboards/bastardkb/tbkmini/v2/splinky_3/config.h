@@ -29,9 +29,9 @@
 // #define EE_HANDS
 
 // default but used in macros
-#define TAPPING_TERM 500
+#define TAPPING_TERM 1000
 
-#define PERMISSIVE_HOLD
+#define QUICK_TAP_TERM 0
 
 #define COMBO_COUNT 10
 
