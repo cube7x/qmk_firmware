@@ -29,7 +29,7 @@
 // #define EE_HANDS
 
 // default but used in macros
-#define TAPPING_TERM 200
+#define TAPPING_TERM 500
 
 #define PERMISSIVE_HOLD
 
