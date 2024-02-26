@@ -17,12 +17,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdio.h>
 #include <keymap_german.h>
 
-// Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 150
-
-// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 0
-
 // Left-hand home row mods
 #define HOME_A LGUI_T(KC_A)
 #define HOME_R LALT_T(KC_R)
@@ -34,7 +28,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOME_E RSFT_T(KC_E)
 #define HOME_I LALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
-
 
 #define LC_BSPC LCTL_T(KC_BSPC)
 #define LT_SPC LT(1,KC_SPC)
