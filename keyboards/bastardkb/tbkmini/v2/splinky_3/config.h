@@ -28,15 +28,12 @@
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define COMBO_COUNT 10
-
 // default but used in macros
 #define TAPPING_TERM 200
 
-// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 0
-
 #define PERMISSIVE_HOLD
+
+#define COMBO_COUNT 10
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
 // If so, uncomment the following code, and undefine MASTER_RIGHT above.
