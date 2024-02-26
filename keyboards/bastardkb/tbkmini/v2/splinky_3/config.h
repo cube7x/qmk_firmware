@@ -28,13 +28,6 @@
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define IGNORE_MOD_TAP_INTERRUPT
-
-// default but used in macros
-#define TAPPING_TERM 250
-
-#define QUICK_TAP_TERM 0
-
 #define COMBO_COUNT 10
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
