@@ -31,7 +31,7 @@
 #define IGNORE_MOD_TAP_INTERRUPT
 
 // default but used in macros
-#define TAPPING_TERM 200
+#define TAPPING_TERM 250
 
 #define QUICK_TAP_TERM 0
 
