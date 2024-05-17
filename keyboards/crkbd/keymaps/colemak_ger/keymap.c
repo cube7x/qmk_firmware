@@ -28,13 +28,13 @@ void keyboard_pre_init_user(void) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-         KC_Z,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_T,                         KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,
+         KC_Z,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_T,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_R,                         KC_7,    KC_8,    KC_9,    KC_0,    KC_A,    KC_B,
+       KC_TAB, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_R,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-         KC_Y,    KC_M,    KC_X,    KC_V,    KC_B,  KC_ESC,                       KC_ESC,    KC_C,    KC_D,    KC_E,    KC_F,    KC_G,
+         KC_Y,    KC_M,    KC_X,    KC_V,    KC_B,  KC_ESC,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                             KC_C,  KC_SPC, KC_LCTL,     KC_H,      KC_I,    KC_J
+                                             KC_C,  KC_SPC, KC_LCTL,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   );
 
