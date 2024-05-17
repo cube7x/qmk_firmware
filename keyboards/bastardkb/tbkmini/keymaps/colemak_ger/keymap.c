@@ -127,13 +127,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [4] = LAYOUT_split_3x6_3(
   //Shooter
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-         KC_P,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_R,                      XXXXXXX, XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9,
+         KC_Z,    KC_G,    KC_Q,    KC_W,    KC_E,    KC_T,                         KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,                      XXXXXXX, XXXXXXX,    KC_0,    KC_4,    KC_5,    KC_6,
+       KC_TAB, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_R,                         KC_7,    KC_8,    KC_9,    KC_0,    KC_A,    KC_B,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-         KC_T,    KC_Z,    KC_Y,    KC_X,    KC_V,  KC_ESC,                      XXXXXXX, XXXXXXX, XXXXXXX,    KC_1,    KC_2,    KC_3,
+         KC_Y,    KC_M,    KC_X,    KC_V,    KC_B,  KC_ESC,                       KC_ESC,    KC_C,    KC_D,    KC_E,    KC_F,    KC_G,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                             KC_C,  KC_SPC, KC_LCTL,      TO(0), XXXXXXX,  LA_ESC
+                                             KC_C,  KC_SPC, KC_LCTL,      TO(0),    KC_H,  LA_ESC
                                       //`--------------------------'  `--------------------------'
   ),
   [5] = LAYOUT_split_3x6_3(
