@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LT_SPC LT(1,KC_SPC)
 #define LT_DEL LT(1,KC_DEL)
 #define LT_0 LT(2,KC_0)
-#define LT_ENT LT(2,KC_ENT)
+#define LT_ENT LT(3,KC_ENT)
 #define LT_DEL3 LT(3,KC_DEL)
 #define LA_ESC LALT(KC_ESC)
 
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_ENT,  KC_SPC,    KC_1,    KC_2,    KC_3, KC_COMM,                      DE_QUES, DE_EXLM, DE_LABK, DE_RABK, DE_PERC,  DE_DLR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    KC_LSFT,  KC_SPC, KC_LCTL
+                                           KC_DEL,   MO(2), KC_LSFT,    KC_LSFT,  KC_SPC, KC_LCTL
                                       //`--------------------------'  `--------------------------'
   ),
 
