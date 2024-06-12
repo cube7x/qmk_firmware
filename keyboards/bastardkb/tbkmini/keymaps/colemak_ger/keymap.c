@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_ENT,  KC_SPC,    KC_1,    KC_2,    KC_3, KC_COMM,                      DE_QUES, DE_EXLM, DE_LABK, DE_RABK, DE_PERC,  DE_DLR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                           KC_DEL,   MO(2), KC_LSFT,    KC_LSFT,  KC_SPC, KC_LCTL
+                                           KC_BSPC,   MO(2), KC_DEL,    KC_LSFT,  KC_SPC, KC_LCTL
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_ENT,  KC_SPC,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      DE_TILD, DE_EURO, DE_PIPE,  DE_DEG, DE_ACUT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LC_BSPC, KC_LSFT, LT_DEL3,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          LC_BSPC, KC_LSFT, LT_DEL3,    KC_LSFT,  KC_SPC, KC_LCTL
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_MUTE, KC_VOLU, KC_VOLD, KC_CALC, KC_PWR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          XXXXXXX, KC_LSFT, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
   [4] = LAYOUT_split_3x6_3(
