@@ -29,7 +29,7 @@
 // #define EE_HANDS
 
 #define TAPPING_TERM 200
-
+#define PERMISSIVE_HOLD
 #define COMBO_COUNT 10
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
