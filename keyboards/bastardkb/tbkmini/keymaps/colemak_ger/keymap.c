@@ -19,10 +19,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define LT_BSPC LT(1,KC_BSPC)
 #define LT_SPC LT(2,KC_SPC)
-#define LC_DEL LCTL_T(KC_DEL)
 #define LT_0 LT(2,KC_0)
 #define LT_ENT LT(3,KC_ENT)
 #define LT_ESC LT(5,KC_ESC)
+
+#define LC_DEL LCTL_T(KC_DEL)
+#define LC_TAB LCTL_T(KC_TAB)
+#define LC_T LCTL_T(KC_T)
+#define LC_N LCTL_T(KC_N)
+#define LA_S LALT(KC_S)
+#define RA_E RALT(KC_E)
+#define LG_R LGUI(KC_R)
+#define LG_I LGUI(KC_I)
 #define LA_ESC LALT(KC_ESC)
 
 void keyboard_pre_init_user(void) {
@@ -80,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z, DE_ODIA, DE_UDIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, DE_ADIA,
+       LC_TAB,    KC_A,    LG_R,    LA_S,    LC_T,    KC_G,                         KC_M,    LC_N,    RA_E,    LG_I,    KC_O, DE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -93,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       DE_ASTR, DE_PLUS,    KC_7,    KC_8,    KC_9, DE_MINS,                      DE_BSLS, DE_SLSH,  DE_EQL, DE_AMPR,  DE_DLR, DE_PERC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    LT_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                      DE_EXLM, DE_LPRN, DE_LCBR, DE_LBRC, DE_DQUO, DE_LABK,
+       LC_TAB,    LT_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                      DE_EXLM, DE_LPRN, DE_LCBR, DE_LBRC, DE_DQUO, DE_LABK,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_ENT,  KC_SPC,    KC_1,    KC_2,    KC_3, KC_COMM,                      DE_QUES, DE_RPRN, DE_RCBR, DE_RABK, DE_QUOT, DE_RBRC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -105,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      DE_CIRC, KC_HOME,   KC_UP,  KC_END, KC_PGUP,  TO(6),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB, KC_LALT,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      DE_HASH, KC_LEFT, KC_DOWN,KC_RIGHT, KC_PGDN,  TO(4),
+       LC_TAB, KC_LALT,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      DE_HASH, KC_LEFT, KC_DOWN,KC_RIGHT, KC_PGDN,  TO(4),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_ENT,  KC_SPC,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      DE_TILD, DE_EURO, DE_PIPE,  DE_DEG, DE_ACUT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
