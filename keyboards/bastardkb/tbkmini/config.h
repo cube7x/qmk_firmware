@@ -18,8 +18,6 @@
 
 #pragma once
 
-#define TAPPING_TERM 200
-
 #define DIODE_DIRECTION ROW2COL
 
 /* RGB settings. */
