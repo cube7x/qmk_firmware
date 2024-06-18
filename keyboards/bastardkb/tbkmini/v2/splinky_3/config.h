@@ -28,7 +28,7 @@
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define TAPPING_TERM 500
+#define TAPPING_TERM 200
 #define PERMISSIVE_HOLD
 
 #define COMBO_COUNT 10
