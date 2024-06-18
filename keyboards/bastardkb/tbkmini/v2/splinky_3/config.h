@@ -17,6 +17,10 @@
 
 #pragma once
 
+// overrides go here!
+#undef MY_SETTING
+#define MY_SETTING 4
+
 /* Key matrix configuration. */
 #define MATRIX_ROW_PINS \
     { GP26, GP5, GP4, GP9 }
