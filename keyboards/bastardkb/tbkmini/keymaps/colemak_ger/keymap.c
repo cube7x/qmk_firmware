@@ -27,10 +27,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LC_TAB LCTL_T(KC_TAB)
 #define LC_T LCTL_T(KC_T)
 #define LC_N LCTL_T(KC_N)
-#define LA_S LALT(KC_S)
-#define RA_E RALT(KC_E)
-#define LG_R LGUI(KC_R)
-#define LG_I LGUI(KC_I)
+#define LA_S LALT_T(KC_S)
+#define RA_E RALT_T(KC_E)
+#define LG_R LGUI_T(KC_R)
+#define LG_I LGUI_T(KC_I)
 #define LA_ESC LALT(KC_ESC)
 
 void keyboard_pre_init_user(void) {
