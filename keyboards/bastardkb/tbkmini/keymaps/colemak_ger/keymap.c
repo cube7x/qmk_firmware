@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LT_ESC LT(5,KC_ESC)
 
 #define LC_BSPC LCTL_T(KC_BSPC)
-#define LC_ESC LCTL_T(KC_ESC)
+#define LC_EXLM LCTL_T(DE_EXLM)
 #define LA_ENT LALT_T(KC_ENT)
 #define RA_ADIA RALT_T(DE_ADIA)
 #define LA_ESC LALT(KC_ESC)
@@ -80,13 +80,13 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      DE_EXLM,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z, DE_ODIA, DE_UDIA,
+       KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Z, DE_ODIA, DE_UDIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, RA_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LC_BSPC, KC_LSFT,  LT_DEL,    LC_ESC,  LT_SPC,  LA_ENT
+                                          LC_BSPC, KC_LSFT,  LT_DEL,    LC_EXLM,  LT_SPC,  LA_ENT
                                       //`--------------------------'  `--------------------------'
 
   ),
