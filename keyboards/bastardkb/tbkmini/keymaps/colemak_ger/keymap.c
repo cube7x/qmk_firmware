@@ -93,11 +93,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      DE_CIRC, DE_ASTR,    KC_7,    KC_8,    KC_9, DE_PERC,                      DE_SLSH, DE_LPRN, DE_LCBR, DE_LBRC, DE_QUOT, DE_LABK,
+      DE_CIRC, DE_ASTR,    KC_7,    KC_8,    KC_9, DE_PERC,                      DE_TILD, DE_QUOT, DE_LPRN, DE_SLSH, DE_LABK, DE_HASH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        DE_EQL,    LT_0,    KC_4,    KC_5,    KC_6, DE_EURO,                      KC_HOME, KC_LEFT,   KC_UP,KC_RIGHT, KC_DOWN,  KC_END,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      DE_ACUT, DE_PLUS,    KC_1,    KC_2,    KC_3,  DE_DLR,                      DE_PIPE,KC_MS_WH_DOWN,KC_MS_WH_UP, DE_HASH, DE_AMPR, DE_TILD,
+      DE_ACUT, DE_PLUS,    KC_1,    KC_2,    KC_3,  DE_DLR,                      DE_PIPE, DE_LCBR, DE_LBRC, DE_AMPR,   TO(6),   TO(4),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           LC_BSPC, KC_LSFT,  KC_SPC,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -117,11 +117,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   TO(4),
+      XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   TO(6),
+      XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           LC_BSPC, KC_LSFT,  KC_SPC,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -136,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
          KC_Y,    KC_M,    KC_X,    KC_V,    KC_B,  LT_ESC,                       KC_ESC,    KC_C,    KC_D,    KC_E,    KC_F,    KC_G,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                             KC_C,  KC_SPC, KC_LCTL,      TO(0),    KC_H,  LA_ESC
+                                             KC_C,  KC_SPC, KC_LCTL,     LA_ESC,    KC_H,   TO(0)
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -154,15 +154,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [6] = LAYOUT_split_3x6_3(
-  //League of Legends
+  //WOW
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      XXXXXXX, XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9,
+         KC_T,    KC_Z,    KC_Q,    KC_W,    KC_E,    KC_R,                      XXXXXXX, XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_F,                      XXXXXXX, XXXXXXX,    KC_0,    KC_4,    KC_5,    KC_6,
+       KC_TAB,    KC_B,    KC_A,    KC_S,    KC_D,    KC_F,                      XXXXXXX, XXXXXXX,    KC_0,    KC_4,    KC_5,    KC_6,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-         KC_Y,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                      XXXXXXX, XXXXXXX, XXXXXXX,    KC_1,    KC_2,    KC_3,
+         KC_Y,    KC_M,    KC_X,    KC_C,    KC_V,  KC_ESC,                      XXXXXXX, XXXXXXX, XXXXXXX,    KC_1,    KC_2,    KC_3,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, KC_LSFT,  KC_SPC,      TO(0), XXXXXXX,  LA_ESC
+                                          KC_LSFT,  KC_SPC, KC_LCTL,     LA_ESC, XXXXXXX,   TO(0)
                                       //`--------------------------'  `--------------------------'
   )
 };
