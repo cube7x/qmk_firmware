@@ -56,6 +56,8 @@ combo_t key_combos[COMBO_COUNT] = {
 const key_override_t exqu_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_EXLM, DE_QUES);
 const key_override_t ssampr_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SS, DE_AMPR);
 const key_override_t circdeg_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_CIRC, DE_DEG);
+const key_override_t plusastr_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_PLUS, DE_ASTR);
+const key_override_t pipetild_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_PIPE, DE_TILD);
 const key_override_t quot_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_QUOT, DE_DQUO);
 const key_override_t slsh_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_SLSH, DE_BSLS);
 const key_override_t prn_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LPRN, DE_RPRN);
@@ -68,6 +70,8 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &exqu_key_override,
     &ssampr_key_override,
     &circdeg_key_override,
+    &plusastr_key_override,
+    &pipetild_key_override,
     &quot_key_override,
     &slsh_key_override,
     &prn_key_override,
@@ -93,11 +97,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      DE_CIRC, DE_ASTR,    KC_7,    KC_8,    KC_9, DE_PERC,                      DE_TILD, DE_QUOT, DE_LPRN, DE_SLSH, DE_LABK, DE_HASH,
+      DE_CIRC, DE_PLUS,    KC_7,    KC_8,    KC_9,   TO(4),                      DE_PIPE, DE_LPRN, DE_LCBR, DE_LBRC, DE_SLSH, DE_HASH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       DE_EQL,    LT_0,    KC_4,    KC_5,    KC_6, DE_EURO,                      KC_HOME, KC_LEFT,   KC_UP,KC_RIGHT, KC_DOWN,  KC_END,
+       DE_EQL,    LT_0,    KC_4,    KC_5,    KC_6,  DE_DLR,                      KC_HOME, KC_LEFT,   KC_UP,KC_RIGHT, KC_DOWN,  KC_END,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      DE_ACUT, DE_PLUS,    KC_1,    KC_2,    KC_3,  DE_DLR,                      DE_PIPE, DE_LCBR, DE_LBRC, DE_AMPR,   TO(6),   TO(4),
+      DE_EURO, DE_AMPR,    KC_1,    KC_2,    KC_3,   TO(6),                      DE_LABK, DE_QUOT, KC_COMM,  KC_DOT, KC_SLSH, DE_PERC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           LC_BSPC, KC_LSFT,  KC_SPC,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -105,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       DE_EQL, DE_PLUS,    KC_7,    KC_8,    KC_9, DE_MINS,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      DE_ASTR, DE_PLUS,    KC_7,    KC_8,    KC_9, DE_MINS,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB,    LT_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -166,4 +170,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   )
 };
-
