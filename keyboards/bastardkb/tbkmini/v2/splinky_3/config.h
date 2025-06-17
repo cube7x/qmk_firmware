@@ -18,7 +18,10 @@
 #pragma once
 
 /* Handedness. */
-#define MASTER_RIGHT
+#define SPLIT_USB_DETECT
+
+#define TAPPING_TERM 200
+#define PERMISSIVE_HOLD
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
 // If so, uncomment the following code, and undefine MASTER_RIGHT above.
