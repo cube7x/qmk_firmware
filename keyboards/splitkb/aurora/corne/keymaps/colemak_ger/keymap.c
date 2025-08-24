@@ -83,14 +83,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   
   [3] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      DE_ASTR, DE_PLUS,    KC_7,    KC_8,    KC_9, DE_MINS,                      XXXXXXX, KC_MPRV, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    LT_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                      XXXXXXX, KC_MNXT, KC_MPLY, KC_VOLU, KC_VOLD, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_ENT,  KC_SPC,    KC_1,    KC_2,    KC_3, KC_COMM,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
-                                      //`--------------------------'  `--------------------------'
-  )
+    //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        KC_VOLU, KC_WH_U,   TO(4), KC_WH_L, KC_WH_R, KC_MNXT,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_VOLD, KC_WH_D,KC_MS_BTN2,KC_MS_BTN3,KC_MS_BTN1,KC_MPLY,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+         DE_DEG, DE_TILD,LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),KC_MPRV,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                            XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                        //`--------------------------'  `--------------------------'
+    )
 };
