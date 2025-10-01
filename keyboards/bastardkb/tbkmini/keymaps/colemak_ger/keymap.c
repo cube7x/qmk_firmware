@@ -17,9 +17,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdio.h>
 #include <keymap_german.h>
 
+#define LT_ENT LT(1,KC_ENT)
 #define LT_SPC LT(2,KC_SPC)
 #define LC_BSPC LCTL_T(KC_BSPC)
-#define LAESC LALT(KC_ESC)
 
 //Homerow Mods
 #define HOME_A LSFT_T(KC_A)
@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define HOME_N RCTL_T(KC_N)
 #define HOME_E LT(3,KC_E)
-#define HOME_I RALT_T(KC_I)
+#define HOME_I LALT_T(KC_I)
 #define HOME_O RSFT_T(KC_O)
 
 #define HOME_0 RSFT_T(KC_0)
@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LC_BSPC,   MO(1),  KC_DEL,    DE_EXLM,  LT_SPC,  KC_ENT
+                                          LC_BSPC,  LT_ENT,  KC_DEL,    DE_EXLM,  LT_SPC,  KC_ENT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -103,11 +103,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_VOLU, KC_WH_U,KC_MS_BTN6,KC_WH_L,KC_WH_R, KC_MNXT,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_VOLD, KC_WH_D,KC_MS_BTN2,KC_MS_BTN3,KC_MS_BTN1,KC_MPLY,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_VOLD, KC_WH_D,KC_MS_BTN2,KC_MS_BTN3,KC_MS_BTN1,KC_MPLY,                 XXXXXXX, LCTL(KC_V), XXXXXXX, LCTL(KC_C), LCTL(KC_X), XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        DE_DEG, DE_TILD,   TO(4),KC_MS_BTN4,KC_MS_BTN5,KC_MPRV,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, KC_LSFT, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          KC_LCTL, KC_LSFT, KC_LALT,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
          KC_M, KC_LCTL,    KC_Z,    KC_X, KC_LALT,  KC_ESC,                      KC_MUTE,    KC_1,    KC_2,    KC_3,    KC_K,    KC_L,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                             KC_Q,  KC_SPC,    KC_E,      LAESC, DE_CIRC,   TO(0)
+                                             KC_Q,  KC_SPC,    KC_E,  LALT(KC_ESC), DE_CIRC,   TO(0)
                                       //`--------------------------'  `--------------------------'
   )
 };

@@ -16,6 +16,12 @@
 
 #pragma once
 
+/* Handedness. */
+//#define SPLIT_USB_DETECT
+#define EE_HANDS
+
+#define TAPPING_TERM 200
+//#define PERMISSIVE_HOLD
 
 /* Reset. */
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET

@@ -25,9 +25,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define EE_HANDS
 
 #define TAPPING_TERM 200
-#define PERMISSIVE_HOLD
+//#define PERMISSIVE_HOLD
 
 //#define USE_MATRIX_I2C
 
 //#define QUICK_TAP_TERM 0
 //#define TAPPING_TERM 100
+
+/* Reset. */
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP17
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 1000U
