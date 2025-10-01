@@ -16,8 +16,8 @@
 
 #pragma once
 
-// Not yet available in `info.json`
-#ifdef OLED_ENABLE
-#    define OLED_DISPLAY_128X32
-#    define SPLIT_OLED_ENABLE
-#endif
+
+/* Reset. */
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP17
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 1000U
