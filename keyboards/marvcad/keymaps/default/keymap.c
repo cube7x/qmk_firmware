@@ -3,6 +3,14 @@
 
 #include QMK_KEYBOARD_H
 
+void keyboard_pre_init_user(void) {
+    // Set our LED pin as output88
+    setPinOutput(24);
+    // Turn the LED off
+    // (Due to technical reasons, high is off and low is on)
+    writePinHigh(24);
+  }
+  
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_ortho_2x6(
         XXXXXXX,       KC_F,    LCTL_T(KC_B),    KC_C,    KC_L,    XXXXXXX,
