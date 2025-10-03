@@ -21,6 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LT_DEL LT(3,KC_DEL)
 #define LC_BSPC LCTL_T(KC_BSPC)
 #define LS_SPC LSFT_T(KC_SPC)
+#define LA_ENT LALT_T(KC_ENT)
+#define RA_EXLM RALT_T(DE_EXLM)
 
 //Homerow Mods
 #define HOME_R RALT_T(KC_R)
@@ -44,9 +46,6 @@ void keyboard_pre_init_user(void) {
   writePinHigh(24);
 }
 
-#define MOD_MASK_RALT MOD_BIT(KC_RALT)
-
-const key_override_t ralta_key_override = ko_make_basic(MOD_MASK_RALT, KC_A, DE_ADIA);
 const key_override_t abk_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LABK, DE_RABK);
 const key_override_t prn_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LPRN, DE_RPRN);
 const key_override_t cbr_key_override = ko_make_basic(MOD_MASK_SHIFT, DE_LCBR, DE_RCBR);
@@ -73,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LC_BSPC, KC_LSFT,  LT_DEL,    DE_EXLM,  LT_SPC,  KC_ENT
+                                          LC_BSPC, KC_LSFT,  LT_DEL,    RA_EXLM,  LT_SPC,  LA_ENT
                                       //`--------------------------'  `--------------------------'
   ),
 
