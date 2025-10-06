@@ -22,7 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LC_BSPC LCTL_T(KC_BSPC)
 #define LS_SPC LSFT_T(KC_SPC)
 #define LA_ENT LALT_T(KC_ENT)
-#define RA_EXLM RALT_T(DE_EXLM)
 
 //Homerow Mods
 #define HOME_R RALT_T(KC_R)
@@ -72,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_Y,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,   DE_SS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LC_BSPC, KC_LSFT,  LT_DEL,    RA_EXLM,  LT_SPC,  LA_ENT
+                                          LC_BSPC, KC_LSFT,  LT_DEL,    DE_EXLM,  LT_SPC,  LA_ENT
                                       //`--------------------------'  `--------------------------'
   ),
 
