@@ -1,6 +1,8 @@
 /*
-Copyright 2019 @foostan
-Copyright 2020 Drashna Jaelre <@drashna>
+This is the c configuration file for the keymap
+
+Copyright 2012 Jun Wako <wakojun@gmail.com>
+Copyright 2015 Jack Humbert
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,22 +20,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-/* ws2812 RGB LED */
-#define RGB_DI_PIN      D3
+/* Handedness. */
+//#define SPLIT_USB_DETECT
+#define EE_HANDS
 
-#ifdef RGBLIGHT_ENABLE
-#    define RGBLED_NUM 54 // Number of LEDs
-#    define RGBLED_SPLIT \
-        { 27, 27 }
-#    define RGBLIGHT_SPLIT
-#endif
+#define TAPPING_TERM 200
+//#define PERMISSIVE_HOLD
 
-#ifdef RGB_MATRIX_ENABLE
-#    define RGBLED_NUM       54 // Number of LEDs
-#    define RGB_MATRIX_LED_COUNT RGBLED_NUM
-#    define RGB_MATRIX_SPLIT \
-        { 27, 27 }
-#    define SPLIT_TRANSPORT_MIRROR
-#endif
+//#define USE_MATRIX_I2C
 
-#define DIODE_DIRECTION COL2ROW
+//#define QUICK_TAP_TERM 0
+//#define TAPPING_TERM 100
+
+/* Reset. */
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED 24
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 1000U

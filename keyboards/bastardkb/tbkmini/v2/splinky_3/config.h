@@ -17,25 +17,16 @@
 
 #pragma once
 
-/* Key matrix configuration. */
-#define MATRIX_ROW_PINS \
-    { GP26, GP5, GP4, GP9 }
-#define MATRIX_COL_PINS \
-    { GP27, GP28, GP21, GP6, GP7, GP8 }
-
 /* Handedness. */
-#define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS
+#define SPLIT_USB_DETECT
 
-#define COMBO_COUNT 10
+#define TAPPING_TERM 200
+//#define PERMISSIVE_HOLD
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
 // If so, uncomment the following code, and undefine MASTER_RIGHT above.
 // #define SPLIT_HAND_PIN GP15
 // #define SPLIT_HAND_PIN_LOW_IS_LEFT  // High -> right, Low -> left.
-
-#define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
 /* Reset. */
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET

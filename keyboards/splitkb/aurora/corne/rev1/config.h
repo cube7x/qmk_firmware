@@ -16,20 +16,14 @@
 
 #pragma once
 
-// `SPLIT_HAND_PIN` can currently be defined in `info.json`,
-// but can't yet be given a value
-#define SPLIT_HAND_PIN F4
+/* Handedness. */
+//#define SPLIT_USB_DETECT
+#define EE_HANDS
 
-// Not yet available in `info.json`
-#ifdef OLED_ENABLE
-#    define OLED_DISPLAY_128X32
-#    define SPLIT_OLED_ENABLE
-#endif
+#define TAPPING_TERM 200
+//#define PERMISSIVE_HOLD
 
-// Not yet available in `info.json`
-#ifdef RGB_MATRIX_ENABLE
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 128
-#    define RGB_MATRIX_LED_COUNT 54
-#    define RGB_MATRIX_SPLIT { 27, 27 }
-#    define SPLIT_TRANSPORT_MIRROR
-#endif
+/* Reset. */
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED 24
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 1000U
