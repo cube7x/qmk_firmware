@@ -35,7 +35,7 @@ jobs:
         run: pip3 install -r requirements-dev.txt
 
       - name: Build firmware
-        run: qmk compile -kb ${{ inputs.keyboard }} -km ${{ inputs.keymap }}
+        run: qmk compile -kb "${{ inputs.keyboard }}" -km "${{ inputs.keymap }}"
 
       - name: Upload firmware
         uses: actions/upload-artifact@v7
